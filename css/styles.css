@@ -300,7 +300,6 @@
 }
 
 
-
 /* ====================================================================
  * # NORMALIZE
  *
@@ -2955,11 +2954,62 @@ img.u-pull-left {
 }
 
 .s-header__nav ul {
-    list-style : none;
-    display    : flex;
-    flex-flow  : row nowrap;
-    margin     : 0;
-    padding    : 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    gap: 30px; /* space between items */
+}
+
+/* Each list item (menu option) */
+.s-header__nav ul li {
+    position: relative; /* needed for dropdown */
+}
+
+/* Menu link styling */
+.s-header__nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #090505;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+/* Dropdown menu styling */
+.s-header__nav ul li ul.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #7bbcb1;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 220px;
+    border-radius: 5px;
+}
+
+/* Dropdown items */
+.s-header__nav ul li ul.sub-menu li a {
+    color: #fff;
+    padding: 8px 15px;
+    display: block;
+    font-size: 2rem;
+    text-align: left;
+}
+
+/* Show dropdown when hovering over Honors Program */
+.s-header__nav ul li:hover > ul.sub-menu {
+    display: block;
+}
+
+/* Hover color for links */
+.s-header__nav ul li a:hover {
+    color: #f39c12;
 }
 
 .s-header__nav li {
@@ -3143,17 +3193,7 @@ img.u-pull-left {
         padding     : var(--vspace-0_375) 0;
     }
 
-    .s-header__nav ul {
-        display          : block;
-        background-color : transparent;
-        text-align       : left;
-        margin           : 0;
-        border           : none;
-    }
 
-    .s-header__nav ul li {
-        display : block;
-    }
 
     .s-header__social {
         position : static;
@@ -3223,7 +3263,7 @@ img.u-pull-left {
     line-height    : 1.0998;
     letter-spacing : -.01em;
     margin-top     : 0;
-    color          : white;
+    color          : rgb(12, 11, 11);
 }
 
 .s-intro__text h3 span {
@@ -3237,7 +3277,7 @@ img.u-pull-left {
     letter-spacing   : -0.015em;
     margin-top       : calc(var(--text-huge-size) / 2 * -1.2);
     margin-bottom    : var(--vspace-1_25);
-    color            : white;
+    color            : rgb(6, 6, 6);
 }
 
 /* --------------------------------------------------------------------
@@ -4157,3 +4197,4 @@ img.u-pull-left {
         width  : 1.6rem;
     }
 }
+
