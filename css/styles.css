@@ -3121,6 +3121,110 @@ img.u-pull-left {
     transform : rotate(-45deg);
 }
 
+
+/* Hide the checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .s-header__menu-toggle {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .s-header__menu-toggle span,
+  .s-header__menu-toggle span::before,
+  .s-header__menu-toggle span::after {
+    display: block;
+    background-color: var(--color-text-dark);
+    height: 2px;
+    width: 28px;
+    position: absolute;
+    content: '';
+    transition: all 0.3s;
+  }
+
+  .s-header__menu-toggle span {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .s-header__menu-toggle span::before {
+    top: -8px;
+  }
+
+  .s-header__menu-toggle span::after {
+    top: 8px;
+  }
+
+  /* Nav menu hidden by default */
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #d0ebee;
+    z-index: 1000;
+  }
+
+  /* When checkbox is checked, show the menu */
+  .menu-toggle:checked + .s-header__menu-toggle + #nav-menu {
+    display: flex;
+  }
+
+  .s-header__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .s-header__nav li {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+
+  .s-header__nav a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-text-dark);
+  }
+}
+
+/* Desktop - show menu normally */
+@media (min-width: 769px) {
+  .s-header__menu-toggle {
+    display: none;
+  }
+
+  #nav-menu {
+    display: flex !important;
+    position: static;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+  }
+
+  .s-header__nav li {
+    margin: 0 1rem;
+  }
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * site-header

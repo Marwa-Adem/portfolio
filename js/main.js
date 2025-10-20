@@ -136,7 +136,6 @@
     }; // end ssStickyHeader
 
 
-
    /* photoswipe
     * ----------------------------------------------------- */
     const ssPhotoswipe = function() {
